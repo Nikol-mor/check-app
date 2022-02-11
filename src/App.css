@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,7 +16,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +37,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.todoList {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoCard {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.todoName {
+  font-weight: bold;
 }
