@@ -11,6 +11,7 @@ export function TodoList() {
   const [todos, setTodos] = useState([]);
   const [showAddTodo, setShowAddTodo] = useState(false);
   const [showEditTodo, setShowEditTodo] = useState(false);
+  const [todoToEdit, setTodoToEdit] = useState(null);
 
   useEffect(() => {
     fetchTodos();
@@ -72,8 +73,9 @@ export function TodoList() {
                 aria-label='edit-btn'
                 onClick={() => {
                   // setShowEditTodo(true);
-                  setShowAddTodo(true);
-                  onEdit(idx);
+                  setShowEditTodo(true);
+                  setTodoToEdit(todo);
+                  // onEdit(idx);
                 }}>
                 <Edit />
               </IconButton>
@@ -96,13 +98,11 @@ export function TodoList() {
           <Add />
         </IconButton>
       )}
-      {/* {showEditTodo ? (
-        <EditTodo  />
+      {showEditTodo ? (
+        <EditTodo todo={todoToEdit} fetchTodos={fetchTodos} setShowEditTodo={setShowEditTodo} />
       ) : (
-        <IconButton onClick={() => setShowAddTodo(true)}>
-          <Add />
-        </IconButton>
-      )} */}
+        ''
+      )}
     </div>
   );
 }
