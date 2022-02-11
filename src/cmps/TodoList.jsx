@@ -5,10 +5,12 @@ import { useEffect, useState } from 'react';
 import { Paper, IconButton } from '@material-ui/core';
 import { Delete, Edit, Add } from '@material-ui/icons';
 import { AddTodo } from './AddTodo';
+import { EditTodo } from './EditTodo';
 
 export function TodoList() {
   const [todos, setTodos] = useState([]);
   const [showAddTodo, setShowAddTodo] = useState(false);
+  const [showEditTodo, setShowEditTodo] = useState(false);
 
   useEffect(() => {
     fetchTodos();
@@ -31,11 +33,11 @@ export function TodoList() {
   const onDelete = async (idx) => {
     try {
       console.log('entered delete');
+      console.log('todos', todos);
       const todo = todos[idx];
-      const todoData = await API.graphql(graphqlOperation(deleteTodo, { input: todo }));
-      //   const todoList = [...todos];
-      //   todoList[idx] = todoData.data.deleteTodo;
-      setTodos({ todos: todoData.data.listTodos.items });
+      console.log('todo', todo, ' in idx: ', idx);
+      const todoData = await API.graphql(graphqlOperation(deleteTodo, { input: { id: todo.id } }));
+      fetchTodos();
     } catch (error) {
       console.log('error on deleting todo', error);
     }
@@ -66,7 +68,13 @@ export function TodoList() {
               <IconButton aria-label='delete-btn' onClick={() => onDelete(idx)}>
                 <Delete />
               </IconButton>
-              <IconButton aria-label='edit-btn' onClick={() => onEdit(idx)}>
+              <IconButton
+                aria-label='edit-btn'
+                onClick={() => {
+                  // setShowEditTodo(true);
+                  setShowAddTodo(true);
+                  onEdit(idx);
+                }}>
                 <Edit />
               </IconButton>
               <div>
@@ -88,6 +96,13 @@ export function TodoList() {
           <Add />
         </IconButton>
       )}
+      {/* {showEditTodo ? (
+        <EditTodo  />
+      ) : (
+        <IconButton onClick={() => setShowAddTodo(true)}>
+          <Add />
+        </IconButton>
+      )} */}
     </div>
   );
 }
