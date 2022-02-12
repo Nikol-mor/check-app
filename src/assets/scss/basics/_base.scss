@@ -9,12 +9,16 @@ code {
 
 .App {
   text-align: center;
-  min-height: 100vh;
 }
 
 .main-container {
   // background-color: #282c34;
   background-color: #33333369;
+  min-height: 75vh;
+
+  @include for-mobile-layout {
+    min-height: 78vh;
+  }
 }
 
 // .hydrated {

@@ -41,11 +41,10 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className='App'>
-        <header className='App-header'>
-          <AmplifySignOut />
-          {/* {loggedIn ? (
+    <div className='App'>
+      <header className='App-header'>
+        <AmplifySignOut />
+        {/* {loggedIn ? (
             <Button onClick={onSignOut} variant='contained' color='primary'>
               Log Out
             </Button>
@@ -56,54 +55,19 @@ function App() {
               </Button>
             </Link>
           )} */}
-          <h2>Check App</h2>
-        </header>
-        <div className='main-container'>
-          <TodoList loggedInId={loggedInId} />
-        </div>
-        <footer>
-          <AppFooter />
-        </footer>
-        {/* <Routes> */}
-        {/* <Route path='/signin' element={<Signin onSignin={isLoggedIn} />} /> */}
-        {/* <Route exact path='/' element={<TodoList />} /> */}
-        {/* </Routes> */}
+        <h2>Check App</h2>
+      </header>
+      <div className='main-container'>
+        <TodoList loggedInId={loggedInId} />
       </div>
-    </Router>
-    // <Router>
-    //   <div className='App'>
-    //     <header className='App-header'>
-    //       {/* <AmplifySignOut /> */}
-    //       {loggedIn ? (
-    //         // <Link to='/'>
-    //         <Button onClick={onSignOut} variant='contained' color='primary'>
-    //           Log Out
-    //         </Button>
-    //       ) : (
-    //         // </Link>
-    //         <Link to='/signin'>
-    //           <Button variant='contained' color='primary'>
-    //             Log In
-    //           </Button>
-    //         </Link>
-    //       )}
-    //       <h2>My App Content</h2>
-    //     </header>
-    //     {/* <Routes>
-    //       <Route exact path='/' element={<TodoList />} />
-    //     </Routes> */}
-    //     <Routes>
-    //       <Route exact path='/'>
-    //         <TodoList />
-    //       </Route>
-    //       <Route path='/signin'>
-    //         <Signin onSignin={isLoggedIn} />
-    //       </Route>
-
-    //       {/* <Route exact={true} path='/signin' elemene={<Signin />} /> */}
-    //     </Routes>
-    //   </div>
-    // </Router>
+      <footer>
+        <AppFooter />
+      </footer>
+      {/* <Routes> */}
+      {/* <Route path='/signin' element={<Signin onSignin={isLoggedIn} />} /> */}
+      {/* <Route exact path='/' element={<TodoList />} /> */}
+      {/* </Routes> */}
+    </div>
   );
 }
 

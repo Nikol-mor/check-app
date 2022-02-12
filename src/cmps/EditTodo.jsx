@@ -9,12 +9,6 @@ import { Save } from '@material-ui/icons';
 export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
   const [todoData, setTodoData] = useState({});
 
-  //   const textRef = useRef();
-
-  //   const showRefContent = () => {
-  //     console.log(textRef.current.value);
-  //   };
-
   const editTask = async (ev) => {
     console.log('todo we got in edit comp', todo);
     console.log('todoData after input ', todoData);
@@ -32,11 +26,11 @@ export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
   return (
     <section className='hero-main'>
       <div className='edit-todo'>
-        <h1>Edit</h1>
-        <h2>{todo.text}</h2>
+        <h1>Edit Todo</h1>
+        {/* <h2>{todo.text}</h2> */}
         <TextField
-          label='Text'
-          // inputRef={textRef}
+          // label='Text'
+          label={todo.text}
           value={todoData.text}
           onChange={(ev) => setTodoData({ ...todoData, text: ev.target.value })}
         />

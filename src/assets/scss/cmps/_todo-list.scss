@@ -10,6 +10,10 @@
   font-size: 20px;
   margin: auto;
 
+  @include for-mobile-layout {
+    width: 88vw;
+  }
+
   .MuiPaper-rounded {
     border-radius: 0;
   }

@@ -25,9 +25,14 @@
       margin-left: 1rem;
     }
 
-    //   button{
-    //     font-size: 1.5rem;
-    // background: transparent;
-    //   }
+    @include for-mobile-layout {
+      margin-left: 0;
+    }
+  }
+
+  @include for-mobile-layout {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0;
   }
 }
