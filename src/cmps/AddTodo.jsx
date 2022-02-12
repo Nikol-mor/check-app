@@ -33,11 +33,6 @@ export function AddTodo({ onUpload, userLogged }) {
         value={todoData.text}
         onChange={(ev) => setTodoData({ ...todoData, text: ev.target.value })}
       />
-      {/* <TextField
-        label='Description'
-        value={todoData.description}
-        onChange={(ev) => setTodoData({ ...todoData, description: ev.target.value })}
-      /> */}
       <IconButton onClick={addTask}>
         <Add />
       </IconButton>

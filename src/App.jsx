@@ -1,4 +1,3 @@
-// import './App.css';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { useEffect, useState } from 'react';
@@ -16,7 +15,6 @@ function App() {
     Auth.currentAuthenticatedUser()
       .then((user) => {
         setUsername(user.username);
-        // setLoggedInId(user.attributes.sub);
       })
       .catch(() => {
         console.log('not logged in');

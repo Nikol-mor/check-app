@@ -2,8 +2,8 @@ import { API, graphqlOperation, Auth } from 'aws-amplify';
 import { listTodos } from '../graphql/queries';
 import { updateTodo, deleteTodo } from '../graphql/mutations';
 import { useEffect, useState } from 'react';
-import { Paper, IconButton, useIsFocusVisible } from '@material-ui/core';
-import { Delete, Edit, Add, NewReleases } from '@material-ui/icons';
+import { Paper, IconButton } from '@material-ui/core';
+import { Delete, Edit, Add } from '@material-ui/icons';
 import { AddTodo } from './AddTodo';
 import { EditTodo } from './EditTodo';
 

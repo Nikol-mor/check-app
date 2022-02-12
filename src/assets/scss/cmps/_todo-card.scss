@@ -1,17 +1,5 @@
-// .todo-card {
-//   display: flex;
-//   flex-direction: row-reverse;
-//   justify-content: space-around;
-//   padding: 5px;
-// }
-
-// .todo-name {
-//   font-weight: bold;
-// }
-
 .todo-card {
   gap: 1rem;
-  // padding: 1.5rem;
   flex-direction: row-reverse;
 
   &:nth-child(1) {
