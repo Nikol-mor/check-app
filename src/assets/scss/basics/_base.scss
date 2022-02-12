@@ -9,6 +9,11 @@ code {
 
 .App {
   text-align: center;
+
+  h5 {
+    font-family: livic-semi-bold;
+    margin-right: 25px;
+  }
 }
 
 .main-container {
@@ -20,19 +25,3 @@ code {
     min-height: 78vh;
   }
 }
-
-// .hydrated {
-//   .button {
-//     font-family: 'livic-semi-bold';
-//     background-color: black;
-//     border-color: white;
-//   }
-// }
-
-// ::root {
-//   amplify-container {
-//     .hydrated {
-//       background-color: black;
-//     }
-//   }
-// }

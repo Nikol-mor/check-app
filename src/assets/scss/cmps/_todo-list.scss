@@ -17,4 +17,24 @@
   .MuiPaper-rounded {
     border-radius: 0;
   }
+
+  .progress-bar-container {
+    outline: 0.5px solid #444;
+    margin-left: 28%;
+    margin-bottom: 20px;
+
+    @include for-mobile-layout {
+      margin-left: 4%;
+    }
+
+    .progress-bar {
+      background: linear-gradient(90deg, #115008, #10ff00);
+      transition: 0.3s;
+
+      span {
+        padding: 2.5px 0 0 5px;
+        margin-top: 5px;
+      }
+    }
+  }
 }

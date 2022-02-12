@@ -1,17 +1,13 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { updateTodo } from '../graphql/mutations';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { IconButton, TextField } from '@material-ui/core';
-import { Add } from '@material-ui/icons';
-import { v4 as uuid } from 'uuid';
 import { Save } from '@material-ui/icons';
 
 export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
   const [todoData, setTodoData] = useState({});
 
   const editTask = async (ev) => {
-    console.log('todo we got in edit comp', todo);
-    console.log('todoData after input ', todoData);
     try {
       await API.graphql(
         graphqlOperation(updateTodo, { input: { id: todo.id, text: todoData.text } })
@@ -27,9 +23,7 @@ export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
     <section className='hero-main'>
       <div className='edit-todo'>
         <h1>Edit Todo</h1>
-        {/* <h2>{todo.text}</h2> */}
         <TextField
-          // label='Text'
           label={todo.text}
           value={todoData.text}
           onChange={(ev) => setTodoData({ ...todoData, text: ev.target.value })}
