@@ -1,0 +1,16 @@
+// .todoList {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.todo-list {
+  width: 60vw;
+  align-self: center;
+  font-family: livic-semi-bold;
+  font-size: 20px;
+  margin: auto;
+
+  .MuiPaper-rounded {
+    border-radius: 0;
+  }
+}

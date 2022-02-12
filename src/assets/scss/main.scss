@@ -1,0 +1,13 @@
+// SETUP
+@import 'setup/typography';
+@import 'basics/base';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/helpers';
+
+//CMPS
+@import 'cmps/header';
+@import 'cmps/todo-list';
+@import 'cmps/todo-card';
+@import 'cmps/footer';

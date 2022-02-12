@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { useEffect, useState } from 'react';
@@ -6,23 +6,24 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { TodoList } from './cmps/TodoList';
+import { AppFooter } from './cmps/AppFooter';
 import { Signin } from './cmps/Signin';
 
 Amplify.configure(awsconfig);
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedInId, setLoggedInId] = useState(null);
 
   const isLoggedIn = () => {
     Auth.currentAuthenticatedUser()
-      .then((sess) => {
-        console.log('sess', sess);
-        console.log('logged in');
-        setLoggedIn(true);
+      .then((user) => {
+        // console.log('user info that logged in: ', user);
+        setLoggedInId(user.attributes.sub);
+        console.log('user.attributes.sub ', user.attributes.sub);
       })
       .catch(() => {
         console.log('not logged in');
-        setLoggedIn(false);
+        setLoggedInId(false);
       });
   };
 
@@ -33,7 +34,7 @@ function App() {
   const onSignOut = async () => {
     try {
       await Auth.signOut();
-      setLoggedIn(false);
+      setLoggedInId(null);
     } catch (error) {
       console.log('error signing out', error);
     }
@@ -55,10 +56,14 @@ function App() {
               </Button>
             </Link>
           )} */}
-          <h2>My App Content</h2>
+          <h2>Check App</h2>
         </header>
-        <TodoList />
-
+        <div className='main-container'>
+          <TodoList loggedInId={loggedInId} />
+        </div>
+        <footer>
+          <AppFooter />
+        </footer>
         {/* <Routes> */}
         {/* <Route path='/signin' element={<Signin onSignin={isLoggedIn} />} /> */}
         {/* <Route exact path='/' element={<TodoList />} /> */}

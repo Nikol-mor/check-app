@@ -30,7 +30,7 @@ export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
   };
 
   return (
-    <div>
+    <div className='edit-section'>
       <h1>Edit</h1>
       <h2>{todo.text}</h2>
       <TextField

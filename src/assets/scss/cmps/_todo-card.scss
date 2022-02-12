@@ -1,0 +1,33 @@
+// .todo-card {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   justify-content: space-around;
+//   padding: 5px;
+// }
+
+// .todo-name {
+//   font-weight: bold;
+// }
+
+.todo-card {
+  gap: 1rem;
+  // padding: 1.5rem;
+  flex-direction: row-reverse;
+
+  &:nth-child(1) {
+    margin-top: 12px;
+  }
+
+  .todo-actions {
+    margin-left: auto;
+
+    > * {
+      margin-left: 1rem;
+    }
+
+    //   button{
+    //     font-size: 1.5rem;
+    // background: transparent;
+    //   }
+  }
+}

@@ -1,0 +1,16 @@
+.App-header {
+  background-color: #333;
+  /* min-height: 100vh; */
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: livic-bold;
+
+  h2 {
+    margin-right: auto;
+  }
+}
