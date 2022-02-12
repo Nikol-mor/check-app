@@ -25,8 +25,12 @@ export function TodoList({ loggedInId }) {
   const fetchTodos = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();
-      console.log('user ', user.username);
-      const todoData = await API.graphql(graphqlOperation(listTodos));
+      console.log('user toodList', user.username);
+      console.log('user toodList', user.attributes.sub);
+      let filterby = { ownerId: { contains: user.attributes.sub } };
+      console.log('filterby', filterby);
+      // const todoData = await API.graphql(graphqlOperation(listTodos));
+      const todoData = await API.graphql(graphqlOperation(listTodos, { filter: filterby }));
       const todoList = todoData.data.listTodos.items;
       console.log('todo list', todoList);
       setTodos(todoList);

@@ -30,18 +30,20 @@ export function EditTodo({ todo, fetchTodos, setShowEditTodo }) {
   };
 
   return (
-    <div className='edit-section'>
-      <h1>Edit</h1>
-      <h2>{todo.text}</h2>
-      <TextField
-        label='Text'
-        // inputRef={textRef}
-        value={todoData.text}
-        onChange={(ev) => setTodoData({ ...todoData, text: ev.target.value })}
-      />
-      <IconButton onClick={editTask}>
-        <Save />
-      </IconButton>
-    </div>
+    <section className='hero-main'>
+      <div className='edit-todo'>
+        <h1>Edit</h1>
+        <h2>{todo.text}</h2>
+        <TextField
+          label='Text'
+          // inputRef={textRef}
+          value={todoData.text}
+          onChange={(ev) => setTodoData({ ...todoData, text: ev.target.value })}
+        />
+        <IconButton onClick={editTask}>
+          <Save />
+        </IconButton>
+      </div>
+    </section>
   );
 }
